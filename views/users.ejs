@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+        <h1>User List</h1>
+        <a href="/users/new" class="btn btn-success mb-3">Create New User</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.surname %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.type %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

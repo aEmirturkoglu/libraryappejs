@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+        <h1>Create New Book</h1>
+        <form method="POST" action="/books">
+            <div class="mb-3">
+                <label class="form-label">ISBN</label>
+                <input type="text" class="form-control" name="isbn" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Author Name</label>
+                <input type="text" class="form-control" name="author" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Page Number</label>
+                <input type="number" class="form-control" name="pages" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Type</label>
+                <% types.forEach(type => { %>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" 
+                            value="<%= type %>" required>
+                        <label class="form-check-label"><%= type %></label>
+                    </div>
+                <% }) %>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/" class="btn btn-secondary">Home Page</a>
+        </form>
+    </div>
+</body>
+</html>
