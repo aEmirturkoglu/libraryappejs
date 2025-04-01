@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+        <h1>Book Catalog</h1>
+        <a href="/books/new" class="btn btn-success mb-3">Create New Book</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% books.forEach(book => { %>
+                    <tr>
+                        <td><%= book.isbn %></td>
+                        <td><%= book.title %></td>
+                        <td><%= book.author %></td>
+                        <td><%= book.pages %></td>
+                        <td><%= book.type %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
